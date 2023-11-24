@@ -1,0 +1,31 @@
+import mysql.connector 
+
+mydb = mysql.connector.connect(
+                 host="",
+                 user="",
+                 passwd=""
+)
+ mycursor= mydb.cursor()
+
+Step:1 
+
+mycursor.execute("CREATE DATABASE db1")
+
+Step:2 
+
+
+mydb = mysql.connector.connect(
+                 host="",
+                 user="",
+                 passwd="",
+                 database="db1"
+)
+
+mycursor.execute("CREATE TABLE teachers( first_name VARCHAR(255), last_name VARCHAR(255), email VARCHAR(255), Number INTEGER(10), Department VARCHAR(255))")
+
+Step:3 
+
+sql="ALTER TABLE teachers ADD COLUMN id INT NULL AUTO_INCREMENT FIRST, ADD KEY(id);   "
+
+mycursor.execute(sql)
+
